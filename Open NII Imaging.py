@@ -2,7 +2,7 @@ import nibabel as nib
 import matplotlib.pyplot as plt
 
 # Change the file path to your path
-path = 'sub-01 copy/func/sub-01_task-Digit_run-01_bold.nii'
+path = 'TestData/sub-01 copy/func/sub-01_task-Digit_run-01_bold.nii'
 my_img = nib.load(path)
 nii_data = my_img.get_fdata()
 nii_aff = my_img.affine
