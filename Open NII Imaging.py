@@ -1,7 +1,7 @@
 import nibabel as nib
 import matplotlib.pyplot as plt
 
-# Change the path to your path
+# Change the file path to your path
 path = 'sub-01 copy/func/sub-01_task-Digit_run-01_bold.nii'
 my_img = nib.load(path)
 nii_data = my_img.get_fdata()
@@ -12,7 +12,7 @@ time = nii_data.shape[3] # this is how many seconds(?) passed while subject was 
 print(nii_aff, '\n', nii_hdr)
 print(nii_data.shape)
 
-viewtype = input('---------------------------------------------------------------------\n'
+viewtype = input('--------\n'
                  'Welcome. Please input the corresponding # if you would like to:\n'
                  ' 1) View one cross section for a specific range of time\n'
                  ' 2) View a specific range of cross sections for one point in time\n'
