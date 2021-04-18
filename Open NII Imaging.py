@@ -8,7 +8,7 @@ nii_data = my_img.get_fdata()
 nii_aff = my_img.affine
 nii_hdr = my_img.header
 sections = nii_data.shape[2]  # this is how many cross-sections there are
-print(nii_aff, '\n', nii_hdr)
+# print(nii_aff, '\n', nii_hdr)
 print(nii_data.shape)
 
 viewtype = input('--------\n'
