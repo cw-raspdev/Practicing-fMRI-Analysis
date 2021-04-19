@@ -10,3 +10,4 @@ ax.set_title('Voxel time series, voxel id = %d' % voxel_id)
 ax.set_xlabel('TR')
 ax.set_ylabel('Voxel Intensity');
 
+
