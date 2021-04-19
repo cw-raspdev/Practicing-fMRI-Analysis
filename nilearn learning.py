@@ -1,22 +1,32 @@
-import nilearn as nil
 from nilearn import masking
-# help(nil)
 
 # Section 1: Defining variables
-# rawpath is the 4D data we want to convert to a mask
-# imgs is where we want to store the mask and what name we'll give it
-# path1 is the data we want to analyze and apply the mask to
-# imgs1 is where we want to store the mask and the name we'll give it
-rawpath = 'TestData/sub-01 copy/anat/sub-01_T1w.nii.gz'
-imgs = 'TestData/mask storage/output.nii'
-path1 = 'TestData/sub-01 copy/anat/sub-01_T1w.nii.gz'
-imgs1 = 'TestData/mask storage/output1.nii'
-
+# ToBeComputed is the 4D data we want to convert to a mask
+# TempMaskStorage is where we want to store the mask and what name we'll give it
+# ToAnalyze is the data we want to analyze and apply the mask to
+# Analyzed is where we want to store the masked data and the name we'll give it
+ToBeComputed = 'TestData/sub-02 copy/func/sub-02_task-Grammatical_run-01_bold.nii.gz'
+MaskStorage = 'TestData/mask storage/' + input('What would you like to name your mask?') + '.nii'
+ToAnalyze = 'TestData/sub-02 copy/func/sub-02_task-Grammatical_run-01_bold.nii.gz'
 print('start')
 # Section 2: To create a 3D mask which is an average of the 4D mask
-beep = masking.compute_epi_mask(rawpath, lower_cutoff=0.2, upper_cutoff=0.85, memory=imgs, verbose=0)
-print(beep)
+MakeMask = masking.compute_epi_mask(ToBeComputed, lower_cutoff=0.2, upper_cutoff=0.85, memory=MaskStorage, verbose=0)
+print('Saving mask now :D')
+
 # Section 3: To apply the mask
-boop = masking.apply_mask(path1, beep, dtype='f')
-print('embark on a mission')
-print(boop)
+maskedData = masking.apply_mask(ToAnalyze, MakeMask, dtype='f')
+print('Applying mask now :D')
+
+# Section 4: Plot voxels with given mask --> This bit comes from plot.py and is mostly Mehak's work :)
+print('Here is a graph of Voxel Intensity over Time')
+from matplotlib import pyplot as plt
+
+voxel_id = 100
+
+f, ax = plt.subplots(1, 1, figsize=(14, 5))
+ax.plot(maskedData[:, voxel_id])
+
+ax.set_title('Voxel time series, voxel id = %d' % voxel_id)
+ax.set_xlabel('TR')
+ax.set_ylabel('Voxel Intensity')
+plt.show()
