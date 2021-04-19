@@ -17,6 +17,7 @@ print('Saving mask now :D')
 maskedData = masking.apply_mask(ToAnalyze, MakeMask, dtype='f')
 print('Applying mask now :D')
 
+#Section 4: Z-scoring
 import numpy as np
 from matplotlib import pyplot as plt
 from sklearn import preprocessing
