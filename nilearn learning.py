@@ -3,11 +3,12 @@ from nilearn import masking
 # Section 1: Defining variables
 # ToBeComputed is the 4D data we want to convert to a mask
 # TempMaskStorage is where we want to store the mask and what name we'll give it
+#           --> you should add a folder to the /gitignore to save masks in
 # ToAnalyze is the data we want to analyze and apply the mask to
 # Analyzed is where we want to store the masked data and the name we'll give it
-ToBeComputed = 'TestData/sub-02 copy/func/sub-02_task-Grammatical_run-01_bold.nii.gz'
+ToBeComputed = 'sub-01_task-Digit_run-01_bold.nii.gz'
 MaskStorage = 'TestData/mask storage/' + input('What would you like to name your mask?') + '.nii'
-ToAnalyze = 'TestData/sub-02 copy/func/sub-02_task-Grammatical_run-01_bold.nii.gz'
+ToAnalyze = 'sub-01_task-Digit_run-01_bold.nii.gz'
 print('start')
 # Section 2: To create a 3D mask which is an average of the 4D mask
 MakeMask = masking.compute_epi_mask(ToBeComputed, lower_cutoff=0.2, upper_cutoff=0.85, memory=MaskStorage, verbose=0)
