@@ -184,7 +184,7 @@ plt.rcParams.update({'font.size': 14})
 # ====================================================================================================
 # Change here to run program with your files
 # ====================================================================================================
-filepath = '/Users/chilseawang/PycharmProjects/boolean-fishes-proj2'
+filepath = '/Users/katelinferreira/Desktop/DataFolder'
 #filepath = 'DataFolder/'
 HRF_file_name   = '/InputHRFData.txt'
 Stim1_file_name = '/Inputstim1.txt'
