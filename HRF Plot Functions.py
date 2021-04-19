@@ -238,3 +238,4 @@ plot_hrf_2_figure(hrf, stim1, stim2)
 plot_hrf_3_figure(hrf, stim1, stim2, [])
 plot_hrf_3_figure(hrf, stim1, stim2, stim3)
 plt.show()
+#Created by Katelin Ferreira, 30 hrs 
