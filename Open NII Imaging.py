@@ -1,8 +1,8 @@
 import nibabel as nib
 import matplotlib.pyplot as plt
 
-# Change the file path to your path
-path = 'TestData/sub-01 copy/anat/sub-01_T1w.nii.gz'
+# Change the file path to your path -- or run it as-is, using the example file.
+path = 'sub-01_task-Digit_run-01_bold.nii.gz'
 my_img = nib.load(path)
 nii_data = my_img.get_fdata()
 nii_aff = my_img.affine
