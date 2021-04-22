@@ -2,7 +2,7 @@
 
 README:
 
-This project runs on Python 3.9 and requires python packages nibabel, nilearn, and matplotlib. The majority of the project is about reading single-file NIfTI-1 data, which is stored in the .nii file format. Most of our coding was done in PyCharm and then synced to Github. 
+This project runs on Python 3.9 and requires python packages nibabel, nilearn, and matplotlib. The majority of the project is about reading single-file NIfTI-1 data, which is stored in the .nii file format. Most of our coding was done in PyCharm and then synced to Github. A work log of this project from brainstorm to final submission can be found here: https://docs.google.com/document/d/1kM9mFiiB_6GpjpgmeF2FN1lGucDNmv-aWLEEy_P654c/edit?usp=sharing
 
 The code HRF Plot Function plots HRF data in signal vs. time graph. It also graphs the number of stimulus added to the patient, makes a graph of the stimulus time series convolved with HRF and plots the HRF data for each stimulus. To run the program you need to download InputHRFData, Inputstim1, Inputstim2, Inputstim3, and change the file path in line 187 variable to be equal to the location where the data files are in your respective computer. The data used is test data, as HRF data could not be extracted from this particular data set, but any data in the format of the test files should produce the same graphs and analysis. 
 
